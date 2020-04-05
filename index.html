@@ -1,15 +1,33 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <script src="http://tappedout.net/tappedout.js"></script>
+        <script>
+            var imgs = ['https://img.scryfall.com/cards/normal/front/7/c/7c18c450-0bfb-4ba6-9212-b5833fce63a2.jpg', 
+                        'https://img.scryfall.com/cards/normal/front/7/c/7c18c450-0bfb-4ba6-9212-b5833fce63a2.jpg', 
+                        'https://img.scryfall.com/cards/normal/front/7/c/7c18c450-0bfb-4ba6-9212-b5833fce63a2.jpg', 
+                        'https://img.scryfall.com/cards/normal/front/7/c/7c18c450-0bfb-4ba6-9212-b5833fce63a2.jpg'];
+            var container = document.getElementById('imageContainer');
+            var docFrag = document.createDocumentFragment();
+
+
+            imgs.forEach(function(cur, index, arr) {
+                var img = document.createElement('img');
+                img.src = cur;
+                docFrag.appendChild(img);
+            });
+            container.appendChild(docFrag);
+            
+            #imageContainer img {
+            width: 20%;
+            height: auto;
+            }
+        </script>
     </head>
     <body>
         <h1>Hello World</h1>
         
-        <p>I'd like to thank <span class="mtgcard">Phyrexian Dreadnought</span> for existing. But really <span class="mtgcard">Serra Angel [M10]</span> is my jam.</p>
+        <div id="imageContainer"></div>
         
-        <blockquote><p>36x Relentless Rats<br />24x Swamp</p></blockquote>
-            
         <p>I'm hosted with GitHub Pages.</p>
     </body>
 </html>
