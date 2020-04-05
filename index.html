@@ -5,22 +5,20 @@
             var imgs = ['https://img.scryfall.com/cards/normal/front/7/c/7c18c450-0bfb-4ba6-9212-b5833fce63a2.jpg', 
                         'https://img.scryfall.com/cards/normal/front/7/c/7c18c450-0bfb-4ba6-9212-b5833fce63a2.jpg', 
                         'https://img.scryfall.com/cards/normal/front/7/c/7c18c450-0bfb-4ba6-9212-b5833fce63a2.jpg', 
-                        'https://img.scryfall.com/cards/normal/front/7/c/7c18c450-0bfb-4ba6-9212-b5833fce63a2.jpg'];
-            var container = document.getElementById('imageContainer');
-            var docFrag = document.createDocumentFragment();
+                        'https://img.scryfall.com/cards/normal/front/7/c/7c18c450-0bfb-4ba6-9212-b5833fce63a2.jpg'];            
 
-
-            imgs.forEach(function(cur, index, arr) {
-                var img = document.createElement('img');
-                img.src = cur;
-                docFrag.appendChild(img);
-            });
-            container.appendChild(docFrag);
-            
-            #imageContainer img {
-            width: 20%;
-            height: auto;
+            function addPics(container, arr){
+              var i = 0, L = arr.length, docFrag = document.createDocumentFragment(), img;
+              if(L){
+                for( docFrag.appendChild(img=document.createElement('img')).src = arr[i]
+                   ; ++i<L
+                   ; docFrag.appendChild(img.cloneNode(false)).src = arr[i]
+                   );
+                container.appendChild(docFrag);
+              }
             }
+
+            addPics( document.getElementById('imageContainer'), imgs );            
         </script>
     </head>
     <body>
