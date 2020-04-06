@@ -10,7 +10,46 @@
         <a href="https://img.scryfall.com/cards/normal/front/7/c/7c18c450-0bfb-4ba6-9212-b5833fce63a2.jpg">Dimir Spybug</a>
         <a href="https://img.scryfall.com/cards/large/front/c/3/c3f1f41e-98fc-4f6b-b287-c8899dff8ab0.jpg">Costly Plunder</a>
         
+        <p id="importedJson"></p>
+        
         <script>
+            
+            function readFile(file)
+            {
+                var f = new XMLHttpRequest();
+                f.open("GET", file, false);
+                f.onreadystatechange = function ()
+                {
+                    if(f.readyState === 4)
+                    {
+                        if(f.status === 200 || f.status == 0)
+                        {
+                            //var res= f.responseText;
+                            var res = JSON.parse(f.responseText)
+                            document.getElementById('importedJson').innerHTML = res.toString();
+                            alert(res); //to see if contents are read
+                        }
+                    }
+                }
+                f.send(null);
+            }
+
+            var imgs = readFile('pack1_img_urls_2020-04-06_15-42.json');
+            
+            function addPics(container, arr){
+              var i = 0, L = arr.length, docFrag = document.createDocumentFragment(), img;
+              if(L){
+                for( docFrag.appendChild(img=document.createElement('img')).src = arr[i]
+                   ; ++i<L
+                   ; docFrag.appendChild(img.cloneNode(false)).src = arr[i]
+                   );
+                container.appendChild(docFrag);
+              }
+            }
+            
+            addPics( document.getElementById('imageContainer'), imgs );
+            
+            /*
             var imgs = ['https://img.scryfall.com/cards/png/front/c/3/c36820fa-ee86-4206-9a0d-737a67cf5208.png?1562202603', 
                         'https://img.scryfall.com/cards/png/front/c/3/c36820fa-ee86-4206-9a0d-737a67cf5208.png?1562202603'];            
 
@@ -31,6 +70,9 @@
                 width: 20%;
                 height: auto;
             }
+            
+            */
+            
         </script>
         
         <p>I'm hosted with GitHub Pages.</p>
