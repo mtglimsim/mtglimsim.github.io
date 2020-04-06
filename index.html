@@ -6,13 +6,13 @@
     <body>
         <h1>Hello World</h1>
         
-        <p>Testing5</p>
+        <p>Testing6</p>
         
         <div id="imageContainer"></div>
         
         <a href="https://img.scryfall.com/cards/normal/front/7/c/7c18c450-0bfb-4ba6-9212-b5833fce63a2.jpg">Dimir Spybug</a>
         <a href="https://img.scryfall.com/cards/large/front/c/3/c3f1f41e-98fc-4f6b-b287-c8899dff8ab0.jpg">Costly Plunder</a>
-        
+        <br>
         Imported JSON:
         <p id="importedJson"></p>
         
@@ -29,7 +29,7 @@
         <script>
             
             //global variable?
-            var imgvar
+            var imgvar;
             
             function readFile(file)
             {
@@ -42,7 +42,7 @@
                         if(f.status === 200 || f.status == 0)
                         {
                             //var res= f.responseText;
-                            var res = JSON.parse(f.responseText)
+                            var res = JSON.parse(f.responseText);
                             //document.getElementById('importedJson').innerHTML = res.toString();
                             document.getElementById('importedJson').innerHTML = res;
                             //alert(res); //to see if contents are read
