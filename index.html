@@ -6,18 +6,25 @@
     <body>
         <h1>Hello World</h1>
         
-        <p>Testing4</p>
+        <p>Testing5</p>
         
         <div id="imageContainer"></div>
         
         <a href="https://img.scryfall.com/cards/normal/front/7/c/7c18c450-0bfb-4ba6-9212-b5833fce63a2.jpg">Dimir Spybug</a>
         <a href="https://img.scryfall.com/cards/large/front/c/3/c3f1f41e-98fc-4f6b-b287-c8899dff8ab0.jpg">Costly Plunder</a>
         
+        Imported JSON:
         <p id="importedJson"></p>
         
-        <div id="importedJson"></div>
+        imgvar contents:
+        <p id="imgvar_contents"></p>
         
-        <p id="demo"></p>
+        <!--
+        <div id="importedJson"></div>
+        -->
+        
+        imgs array contents:
+        <p id="imgs_array_contents"></p>
         
         <script>
             
@@ -41,6 +48,7 @@
                             //alert(res); //to see if contents are read
                             
                             imgvar = res;
+                            document.getElementById("imgvar_contents").innerHTML = imgvar;
                         }
                     }
                 }
@@ -55,7 +63,7 @@
             for (var i = 0; i < imgs.length; i++) {
               text += cars[i] + "<br>";
             }
-            document.getElementById("demo").innerHTML = text;
+            document.getElementById("imgs_array_contents").innerHTML = text;
             // ----------------------------------------------------------------------------
             
             function addPics(container, arr){
