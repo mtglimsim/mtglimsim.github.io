@@ -6,14 +6,21 @@
     <body>
         <h1>Hello World</h1>
         
-        <p>Testing2</p>
+        <p>Testing3</p>
+        
         <div id="imageContainer"></div>
+        
         <a href="https://img.scryfall.com/cards/normal/front/7/c/7c18c450-0bfb-4ba6-9212-b5833fce63a2.jpg">Dimir Spybug</a>
         <a href="https://img.scryfall.com/cards/large/front/c/3/c3f1f41e-98fc-4f6b-b287-c8899dff8ab0.jpg">Costly Plunder</a>
         
         <p id="importedJson"></p>
         
+        <div id="importedJson"></div>
+        
         <script>
+            
+            //global variable?
+            var imgvar
             
             function readFile(file)
             {
@@ -29,14 +36,16 @@
                             var res = JSON.parse(f.responseText)
                             //document.getElementById('importedJson').innerHTML = res.toString();
                             document.getElementById('importedJson').innerHTML = res;
-                            alert(res); //to see if contents are read
+                            //alert(res); //to see if contents are read
+                            
+                            imgvar = res;
                         }
                     }
                 }
                 f.send(null);
             }
 
-            var imgs = readFile('pack1_img_urls_2020-04-06_15-42.json');
+            var imgs = imgvar.split(',');
             
             function addPics(container, arr){
               var i = 0, L = arr.length, docFrag = document.createDocumentFragment(), img;
