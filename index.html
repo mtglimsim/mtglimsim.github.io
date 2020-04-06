@@ -6,7 +6,7 @@
     <body>
         <h1>Hello World</h1>
         
-        <p>Testing3</p>
+        <p>Testing4</p>
         
         <div id="imageContainer"></div>
         
@@ -16,6 +16,8 @@
         <p id="importedJson"></p>
         
         <div id="importedJson"></div>
+        
+        <p id="demo"></p>
         
         <script>
             
@@ -45,7 +47,16 @@
                 f.send(null);
             }
 
+            // Put the contents of the string into an array, using commas as a delimiter
             var imgs = imgvar.split(',');
+            
+            // Print the contents of the imgs array --------------------------------------
+            var text = "";
+            for (var i = 0; i < imgs.length; i++) {
+              text += cars[i] + "<br>";
+            }
+            document.getElementById("demo").innerHTML = text;
+            // ----------------------------------------------------------------------------
             
             function addPics(container, arr){
               var i = 0, L = arr.length, docFrag = document.createDocumentFragment(), img;
