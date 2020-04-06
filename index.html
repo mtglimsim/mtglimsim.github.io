@@ -27,7 +27,8 @@
                         {
                             //var res= f.responseText;
                             var res = JSON.parse(f.responseText)
-                            document.getElementById('importedJson').innerHTML = res.toString();
+                            //document.getElementById('importedJson').innerHTML = res.toString();
+                            document.getElementById('importedJson').innerHTML = res;
                             alert(res); //to see if contents are read
                         }
                     }
