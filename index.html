@@ -6,7 +6,7 @@
         ---------------------------------------------------------------------------------------
         <h1>Hello World</h1>
         ---------------------------------------------------------------------------------------
-        <p>Testing6</p>
+        <p>Testing7</p>
         ---------------------------------------------------------------------------------------
         <div id="imageContainer"></div>
         ---------------------------------------------------------------------------------------
@@ -89,7 +89,7 @@
             // Print the contents of the imgs array --------------------------------------
             var text = "";
             for (var i = 0; i < imgs[0].length; i++) {
-              text += cars[i] + "<br>";
+              text += imgs[0][i] + "<br>";
             }
             document.getElementById("imgs_array_contents").innerHTML = text;
             // ----------------------------------------------------------------------------
@@ -105,7 +105,7 @@
               }
             }
             
-            addPics( document.getElementById('imageContainer'), imgs[0]);
+            addPics( document.getElementById("imageContainer").innerHTML, imgs[0]);
             
             /*
             var imgs = ['https://img.scryfall.com/cards/png/front/c/3/c36820fa-ee86-4206-9a0d-737a67cf5208.png?1562202603', 
