@@ -97,9 +97,9 @@
             function addPics(container, arr){
               var i = 0, L = arr.length, docFrag = document.createDocumentFragment(), img;
               if(L){
-                for( docFrag.appendChild(img=document.createElement('img')).src = arr[i]
+                for( docFrag.appendChild(img=document.createElement('img')).src = arr[0][i]
                    ; ++i<L
-                   ; docFrag.appendChild(img.cloneNode(false)).src = arr[i]
+                   ; docFrag.appendChild(img.cloneNode(false)).src = arr[0][i]
                    );
                 container.appendChild(docFrag);
               }
