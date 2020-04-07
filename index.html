@@ -6,7 +6,7 @@
         ---------------------------------------------------------------------------------------
         <h1>Hello World</h1>
         ---------------------------------------------------------------------------------------
-        <p>Testing3</p>
+        <p>Testing4</p>
         ---------------------------------------------------------------------------------------
         <div id="imageContainer"></div>
         ---------------------------------------------------------------------------------------
@@ -36,6 +36,14 @@
         <br>
         imgs array contents:
         <p id="imgs_array_contents"></p>
+        ---------------------------------------------------------------------------------------
+        <br>
+        imgs array length:
+        <p id="imgs_array_length"></p>
+        ---------------------------------------------------------------------------------------
+        <br>
+        imgvar array length:
+        <p id="imgvar_array_length"></p>
         ---------------------------------------------------------------------------------------
         <script>
             
@@ -73,6 +81,10 @@
             
             // imgs array to use in the addPics function
             var imgs = imgvar;
+            
+            // check lengths
+            document.getElementById("imgvar_array_length").innerHTML = imgvar.length;
+            document.getElementById("imgs_array_length").innerHTML = imgs.length;
             
             // Print the contents of the imgs array --------------------------------------
             var text = "";
