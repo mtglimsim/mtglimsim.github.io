@@ -3,39 +3,41 @@
     <head>
     </head>
     <body>
+        ---------------------------------------------------------------------------------------
         <h1>Hello World</h1>
-        
-        <p>Testing8</p>
-        
+        ---------------------------------------------------------------------------------------
+        <p>Testing9</p>
+        ---------------------------------------------------------------------------------------
         <div id="imageContainer"></div>
-        
+        ---------------------------------------------------------------------------------------
         <a href="https://img.scryfall.com/cards/normal/front/7/c/7c18c450-0bfb-4ba6-9212-b5833fce63a2.jpg">Dimir Spybug</a>
         <a href="https://img.scryfall.com/cards/large/front/c/3/c3f1f41e-98fc-4f6b-b287-c8899dff8ab0.jpg">Costly Plunder</a>
-        
+        ---------------------------------------------------------------------------------------
         <br>
         <br>
         Imported JSON:
         <p id="importedJson"></p>
-        
+        ---------------------------------------------------------------------------------------
         imgvar try contents:
         <p id="imgvar_try_contents"></p>
-        
+        ---------------------------------------------------------------------------------------
         imgvar contents:
         <p id="imgvar_contents"></p>
-        
+        ---------------------------------------------------------------------------------------
         <!--
         <div id="importedJson"></div>
         -->
-        
+        ---------------------------------------------------------------------------------------
         imgs array contents:
         <p id="imgs_array_contents"></p>
-        
+        ---------------------------------------------------------------------------------------
         <script>
             
             //global variable?
             var imgvar = "try";
-            document.getElementById("imgvar_try_contents").innerHTML = imgvar;
+            document.getElementById("imgvar_try_contents").innerHTML = imgvar; // works
             
+            // READFILE FUNCTION ------------------------------------------------------------------
             function readFile(file)
             {
                 var f = new XMLHttpRequest();
@@ -52,13 +54,14 @@
                             document.getElementById('importedJson').innerHTML = res;
                             //alert(res); //to see if contents are read
                             
-                            imgvar = res;
-                            document.getElementById("imgvar_contents").innerHTML = imgvar;
+                            //imgvar = res;
+                            //document.getElementById("imgvar_contents").innerHTML = imgvar;
                         }
                     }
                 }
                 f.send(null);
             }
+            // ---------------------------------------------------------------------------------------
 
             // Put the contents of the string into an array, using commas as a delimiter
             var imgs = imgvar.split(',');
