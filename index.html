@@ -6,9 +6,16 @@
         ---------------------------------------------------------------------------------------
         <h1>Hello World</h1>
         ---------------------------------------------------------------------------------------
-        <p>Testing7</p>
+        <p>Testing9</p>
+        ---------------------------------------------------------------------------------------
+        <form>
+            <input type="text" id="imagename" value="" />
+            <input type="button" id="go_btn" value="GO" />
+        </form>
         ---------------------------------------------------------------------------------------
         <div id="imageContainer"></div>
+        ---------------------------------------------------------------------------------------
+        <div id="testingImageContainer"></div>
         ---------------------------------------------------------------------------------------
         <br>
         <a href="https://img.scryfall.com/cards/normal/front/7/c/7c18c450-0bfb-4ba6-9212-b5833fce63a2.jpg">Dimir Spybug</a>
@@ -47,11 +54,21 @@
         ---------------------------------------------------------------------------------------
         <script>
             
-            //global variable?
+            // Button experiment
+            document.getElementById('go_btn').onclick = function() {
+                var src = document.getElementById('imagename').value,
+                    img = document.createElement('img');
+
+                img.src = src;
+                document.body.appendChild(img);
+            }
+            
+            
+            //global variable
             var imgvar = "try";
             document.getElementById("imgvar_try_contents").innerHTML = imgvar; // works
             
-            // READFILE FUNCTION ------------------------------------------------------------------
+            // Reads file containing the MTG card image data
             function readFile(file)
             {
                 var f = new XMLHttpRequest();
@@ -82,11 +99,12 @@
             // imgs array to use in the addPics function
             var imgs = imgvar;
             
-            // check lengths
+            // check lengths (15 cards per booster, 8 players)
             document.getElementById("imgvar_array_length").innerHTML = imgvar[0].length;
             document.getElementById("imgs_array_length").innerHTML = imgs.length;
             
             // Print the contents of the imgs array --------------------------------------
+            // For player one (imgs[0]), all cards (imgs[0][i])
             var text = "";
             for (var i = 0; i < imgs[0].length; i++) {
               text += imgs[0][i] + "<br>";
@@ -94,18 +112,30 @@
             document.getElementById("imgs_array_contents").innerHTML = text;
             // ----------------------------------------------------------------------------
             
+            // Test just one link in case the links aren't good
+            function addOnePic(container, arr){
+                var docFrag = document.createDocumentFragment(), 
+                    img;
+                
+                docFrag.appendChild(img=document.createElement('img')).src = arr;
+                container.appendChild(docFrag);
+            }
+            
+            addOnePic( document.getElementById("testImageContainer"), imgs[0][0]);
+            
+            //-----------------------------------------------------------------------------
             function addPics(container, arr){
               var i = 0, L = arr.length, docFrag = document.createDocumentFragment(), img;
               if(L){
-                for( docFrag.appendChild(img=document.createElement('img')).src = arr[0][i]
+                for( docFrag.appendChild(img=document.createElement('img')).src = arr[i]
                    ; ++i<L
-                   ; docFrag.appendChild(img.cloneNode(false)).src = arr[0][i]
+                   ; docFrag.appendChild(img.cloneNode(false)).src = arr[i]
                    );
                 container.appendChild(docFrag);
               }
             }
             
-            addPics( document.getElementById("imageContainer").innerHTML, imgs[0]);
+            addPics( document.getElementById("imageContainer"), imgs[0]);
             
             /*
             var imgs = ['https://img.scryfall.com/cards/png/front/c/3/c36820fa-ee86-4206-9a0d-737a67cf5208.png?1562202603', 
