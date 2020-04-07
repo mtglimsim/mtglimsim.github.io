@@ -6,7 +6,7 @@
         ---------------------------------------------------------------------------------------
         <h1>Hello World</h1>
         ---------------------------------------------------------------------------------------
-        <p>Testing5</p>
+        <p>Testing6</p>
         ---------------------------------------------------------------------------------------
         <div id="imageContainer"></div>
         ---------------------------------------------------------------------------------------
@@ -64,12 +64,12 @@
                         {
                             //var res= f.responseText;
                             var res = JSON.parse(f.responseText);
-                            document.getElementById('importedJson').innerHTML = res.toString();
-                            //document.getElementById('importedJson').innerHTML = res;
+                            //document.getElementById('importedJson').innerHTML = res.toString();
+                            document.getElementById('importedJson').innerHTML = res;
                             //alert(res); //to see if contents are read
                             
                             imgvar = res;
-                            document.getElementById("imgvar_contents").innerHTML = imgvar;
+                            document.getElementById("imgvar_contents").innerHTML = imgvar[0];
                         }
                     }
                 }
@@ -88,7 +88,7 @@
             
             // Print the contents of the imgs array --------------------------------------
             var text = "";
-            for (var i = 0; i < imgs.length; i++) {
+            for (var i = 0; i < imgs[0].length; i++) {
               text += cars[i] + "<br>";
             }
             document.getElementById("imgs_array_contents").innerHTML = text;
