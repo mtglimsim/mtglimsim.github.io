@@ -12,9 +12,13 @@
         <a href="https://img.scryfall.com/cards/normal/front/7/c/7c18c450-0bfb-4ba6-9212-b5833fce63a2.jpg">Dimir Spybug</a>
         <a href="https://img.scryfall.com/cards/large/front/c/3/c3f1f41e-98fc-4f6b-b287-c8899dff8ab0.jpg">Costly Plunder</a>
         
-        
+        <br>
+        <br>
         Imported JSON:
         <p id="importedJson"></p>
+        
+        imgvar try contents:
+        <p id="imgvar_try_contents"></p>
         
         imgvar contents:
         <p id="imgvar_contents"></p>
@@ -29,7 +33,8 @@
         <script>
             
             //global variable?
-            var imgvar = '';
+            var imgvar = "try";
+            document.getElementById("imgvar_try_contents").innerHTML = imgvar;
             
             function readFile(file)
             {
