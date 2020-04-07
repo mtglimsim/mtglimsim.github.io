@@ -6,7 +6,7 @@
         ---------------------------------------------------------------------------------------
         <h1>Hello World</h1>
         ---------------------------------------------------------------------------------------
-        <p>Testing9</p>
+        <p>Testing1</p>
         ---------------------------------------------------------------------------------------
         <form>
             <input type="text" id="imagename" value="" />
@@ -15,7 +15,14 @@
         ---------------------------------------------------------------------------------------
         <div id="imageContainer"></div>
         ---------------------------------------------------------------------------------------
+        Try div
         <div id="testingImageContainer"></div>
+        <br>
+        Try div2
+        <div id="testingImageContainer2"></div>
+        <br>
+        Try p
+        <p id="testingImageContainer"></p>
         ---------------------------------------------------------------------------------------
         <br>
         <a href="https://img.scryfall.com/cards/normal/front/7/c/7c18c450-0bfb-4ba6-9212-b5833fce63a2.jpg">Dimir Spybug</a>
@@ -112,6 +119,11 @@
             document.getElementById("imgs_array_contents").innerHTML = text;
             // ----------------------------------------------------------------------------
             
+            // try just one
+            var img = document.createElement('img');
+            img.src = imgvar[0][0];
+            document.getElementById('testingImageContainer2').appendChild(img);
+            
             // Test just one link in case the links aren't good
             function addOnePic(container, arr){
                 var docFrag = document.createDocumentFragment(), 
@@ -121,7 +133,7 @@
                 container.appendChild(docFrag);
             }
             
-            addOnePic( document.getElementById("testImageContainer"), imgs[0][0]);
+            addOnePic( document.getElementById("testingImageContainer"), imgs[0][0]);
             
             //-----------------------------------------------------------------------------
             function addPics(container, arr){
