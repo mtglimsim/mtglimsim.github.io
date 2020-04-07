@@ -6,7 +6,7 @@
         ---------------------------------------------------------------------------------------
         <h1>Hello World</h1>
         ---------------------------------------------------------------------------------------
-        <p>Testing4</p>
+        <p>Testing5</p>
         ---------------------------------------------------------------------------------------
         <div id="imageContainer"></div>
         ---------------------------------------------------------------------------------------
@@ -64,8 +64,8 @@
                         {
                             //var res= f.responseText;
                             var res = JSON.parse(f.responseText);
-                            //document.getElementById('importedJson').innerHTML = res.toString();
-                            document.getElementById('importedJson').innerHTML = res;
+                            document.getElementById('importedJson').innerHTML = res.toString();
+                            //document.getElementById('importedJson').innerHTML = res;
                             //alert(res); //to see if contents are read
                             
                             imgvar = res;
@@ -83,7 +83,7 @@
             var imgs = imgvar;
             
             // check lengths
-            document.getElementById("imgvar_array_length").innerHTML = imgvar.length;
+            document.getElementById("imgvar_array_length").innerHTML = imgvar[0].length;
             document.getElementById("imgs_array_length").innerHTML = imgs.length;
             
             // Print the contents of the imgs array --------------------------------------
@@ -105,7 +105,7 @@
               }
             }
             
-            addPics( document.getElementById('imageContainer'), imgs );
+            addPics( document.getElementById('imageContainer'), imgs[0]);
             
             /*
             var imgs = ['https://img.scryfall.com/cards/png/front/c/3/c36820fa-ee86-4206-9a0d-737a67cf5208.png?1562202603', 
