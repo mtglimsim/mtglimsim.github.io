@@ -9,60 +9,18 @@
         <p>Testing2</p>
         ---------------------------------------------------------------------------------------
         <form>
-            <input type="text" id="imagename" value="" />
-            <input type="button" id="go_btn" value="GO" />
+            <input type="text" id="imagename" value="Name for Draft" />
+            <input type="button" id="lobby_btn" value="Join Lobby" />
         </form>
         ---------------------------------------------------------------------------------------
-        <div id="imageContainer"></div>
-        ---------------------------------------------------------------------------------------
-        Try div
-        <div id="testingImageContainer"></div>
-        <br>
-        Try div2
-        <div id="testingImageContainer2"></div>
-        <br>
-        Try p
-        <p id="testingImageContainer"></p>
-        ---------------------------------------------------------------------------------------
-        <br>
-        <a href="https://img.scryfall.com/cards/normal/front/7/c/7c18c450-0bfb-4ba6-9212-b5833fce63a2.jpg">Dimir Spybug</a>
-        <a href="https://img.scryfall.com/cards/large/front/c/3/c3f1f41e-98fc-4f6b-b287-c8899dff8ab0.jpg">Costly Plunder</a>
-        <br>
-        ---------------------------------------------------------------------------------------
-        <br>
-        <br>
-        Imported JSON:
-        <p id="importedJson"></p>
-        ---------------------------------------------------------------------------------------
-        <br>
-        imgvar try contents:
-        <p id="imgvar_try_contents"></p>
-        ---------------------------------------------------------------------------------------
-        <br>
-        imgvar contents:
-        <p id="imgvar_contents"></p>
-        ---------------------------------------------------------------------------------------
-        <br>
         <!--
-        <div id="importedJson"></div>
+        <div id="imageContainer"></div>
         -->
-        ---------------------------------------------------------------------------------------
-        <br>
-        imgs array contents:
-        <p id="imgs_array_contents"></p>
-        ---------------------------------------------------------------------------------------
-        <br>
-        imgs array length:
-        <p id="imgs_array_length"></p>
-        ---------------------------------------------------------------------------------------
-        <br>
-        imgvar array length:
-        <p id="imgvar_array_length"></p>
         ---------------------------------------------------------------------------------------
         <script>
             
             // Button experiment
-            document.getElementById('go_btn').onclick = function() {
+            document.getElementById('lobby_btn').onclick = function() {
                 var src = document.getElementById('imagename').value,
                     img = document.createElement('img');
 
